@@ -1,5 +1,4 @@
 name: Maven Build
-
 on:
   push:
     branches:
