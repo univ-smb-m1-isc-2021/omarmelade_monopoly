@@ -1,4 +1,4 @@
-
+package com.omarmelade.monopoly;
 
 public class Case {
 

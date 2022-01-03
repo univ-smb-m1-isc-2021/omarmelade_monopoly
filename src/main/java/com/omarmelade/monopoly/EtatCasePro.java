@@ -1,3 +1,4 @@
+package com.omarmelade.monopoly;
 
 public class EtatCasePro {
     public CasePropriete caseproprio;
