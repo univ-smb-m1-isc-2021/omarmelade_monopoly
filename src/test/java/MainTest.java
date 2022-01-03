@@ -1,12 +1,7 @@
-import junit.framework.TestCase;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MainTest extends TestCase {
-
-    public MainTest(String name) {
-        super(name);
-    }
+public class MainTest {
 
     @Test
     public void testRunning() {
