@@ -1,24 +1,51 @@
 package com.omarmelade.monopoly;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class CasePropriete extends Case {
-    public String etat;
 
     public int loyer;
-
-    public String prixdachat;
-
+    public int prixdachat;
     public Joueur proprio;
-
     public Joueur joueur;
+    public EtatCasePro etatCasePro;
+    public Quartier q;
 
-    public List<EtatCasePro> etatCasePro = new ArrayList<EtatCasePro> ();
-
-    public boolean estLibre() {
-        return true;
+    public CasePropriete(int num, String nom, int loyer, int prixdachat, Quartier q) {
+        super(num, nom);
+        this.loyer = loyer;
+        this.prixdachat = prixdachat;
+        this.proprio = null;
+        this.joueur = null;
+        this.etatCasePro = new EtatLibre(this);
+        this.q = q;
     }
+
+    public CasePropriete(int num, String nom, int loyer, int prixdachat) {
+        super(num, nom);
+        this.loyer = loyer;
+        this.prixdachat = prixdachat;
+        this.proprio = null;
+        this.joueur = null;
+        this.etatCasePro = new EtatLibre(this);
+    }
+
+    public String arriveJoueur(Joueur j) {
+        return etatCasePro.arriveJoueur(j);
+    }
+
+    public void setQ(Quartier q) {
+        this.q = q;
+    }
+
+    public int getLoyer() {
+        return loyer;
+    }
+
+    public int getPrixdachat() {
+        return prixdachat;
+    }
+
 
     public void acheteTerrain(Joueur J) {
     }
@@ -27,14 +54,15 @@ public class CasePropriete extends Case {
     }
 
     public void setProprio(Joueur j) {
+        proprio = j;
     }
 
     public Joueur getProprio() {
-        // TODO
-        return new Joueur();
+        return proprio;
     }
 
-    public void setEtat(String etat) {
+    public void setEtat(EtatCasePro etat) {
+        etatCasePro = etat;
     }
 
     public String getEtat() {
@@ -42,11 +70,38 @@ public class CasePropriete extends Case {
         return new String("");
     }
 
-    public Quartier getQuartier() {
-        return new Quartier();
+
+    public boolean verifConstructible() {
+        boolean constructible = true;
+        if(q != null){
+            for ( CasePropriete cp : q.casePropriete) {
+                if(!Objects.equals(cp.proprio, proprio)) {
+                    constructible = false;
+                }
+            }
+            return constructible;
+        }
+        return false;
     }
 
-    public void verifConstructible() {
+    public int getNbCaseQuartier(){
+        int nb = 1;
+        if(q != null){
+            for ( CasePropriete cp : q.casePropriete) {
+                if(!Objects.equals(cp.proprio, proprio)) {
+                    nb++;
+                }
+            }
+        }
+        return nb;
+    }
+
+    public boolean payeLoyer(Joueur j) {
+        return etatCasePro.payerLoyer(j);
+    }
+
+    public void construireMaison(int nb) {
+        etatCasePro.construireMaison(nb);
     }
 
 }

@@ -4,25 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Joueur {
+
+    public String name;
     public int solde;
 
     public Case curCase;
-
     public List<Case> list = new ArrayList<Case>();
 
+    public Joueur(String name, int solde, Case curCase, List<Case> list) {
+        this.name = name;
+        this.solde = 500;
+        this.curCase = curCase;
+        this.list = list;
+    }
+
+    public Joueur(String name) {
+        this.name = name;
+        this.solde = 500;
+    }
+
     public Case getCurCase() {
-        return new Case();
+        return curCase;
     }
-
     public void setCurCase(Case c) {
+        curCase = c;
     }
 
-    public String goCase(Case newCase) {
-        return "";
+    public void goCase(Case newCase) {
+        System.out.println(this.name + " va a la case " + newCase.nom);
+        String posibilites = "";
+        setCurCase(newCase);
+        if(newCase instanceof CasePropriete)
+            posibilites = ((CasePropriete)newCase).arriveJoueur(this);
+        else
+            posibilites = newCase.arriveJoueur(this);
+        System.out.println(this.name + " peut : ");
+        System.out.println(" - " + posibilites);
     }
 
     public int getSolde() {
-        return 0;
+        return solde;
     }
 
     public void setSoldeJ(int solde) {
@@ -31,4 +52,26 @@ public class Joueur {
     public void acheteCase() {
     }
 
+    public void payeLoyer(Case c) {
+    }
+
+    public void debit(int c) {
+        solde -= c;
+    }
+
+    public void credit(int c) {
+        solde += c;
+    }
+
+    public void construireMaison(int nb) {
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public void info(){
+        System.out.println(name + " a " + solde +"€ ");
+    }
 }

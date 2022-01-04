@@ -9,4 +9,8 @@ public class Quartier {
 
     public List<CasePropriete> casePropriete = new ArrayList<CasePropriete> ();
 
+    public Quartier(String couleur, List<CasePropriete> casePropriete) {
+        this.couleur = couleur;
+        this.casePropriete = casePropriete;
+    }
 }
