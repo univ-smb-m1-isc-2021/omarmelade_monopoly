@@ -46,7 +46,6 @@ public class MainTest {
         ((CasePropriete)m.plateau.getCaseAt( 6)).setProprio(m.joueurs.get(0));
         Joueur j = ((CasePropriete)m.plateau.getCaseAt( 6)).getProprio();
         assertNotNull(j);
-        System.out.println("proprio : " + j);
 
         int nb = m.lanceDe(4);
         m.avancer(nb);
