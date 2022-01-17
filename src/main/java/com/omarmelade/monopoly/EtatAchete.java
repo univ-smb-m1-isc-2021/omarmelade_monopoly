@@ -14,17 +14,10 @@ public class EtatAchete extends EtatCasePro {
     }
 
     @Override
-    public String arriveJoueur(Joueur j) {
-        if(j != caseproprio.proprio){
-            return "Payer le loyer";
-        }else{
-            return "Ne rien faire";
-        }
-    }
-    @Override
     public void construireMaison(int nb){
        logger.debug("Impossible vous devez posseder le quartier");
     }
+
     @Override
     public String toString() {
         return "La case " + caseproprio.nom + " est Acheté";

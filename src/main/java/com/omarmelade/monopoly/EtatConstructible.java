@@ -14,14 +14,6 @@ public class EtatConstructible extends EtatCasePro {
         this.caseproprio = caseproprio;
     }
 
-    @Override
-    public String arriveJoueur(Joueur j) {
-        if(j != caseproprio.proprio){
-            return "Payer le loyer";
-        }else{
-            return "Construire une maison";
-        }
-    }
 
 
     @Override

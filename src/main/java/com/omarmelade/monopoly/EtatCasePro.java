@@ -14,7 +14,11 @@ public class EtatCasePro {
     }
 
     public String arriveJoueur(Joueur j) {
-        return "etat indefini";
+        if(j != caseproprio.proprio){
+            return "Payer le loyer";
+        }else{
+            return "Construire une maison";
+        }
     }
 
     public boolean acheteTerrain(Joueur j) {
