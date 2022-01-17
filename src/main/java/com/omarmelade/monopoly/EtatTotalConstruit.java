@@ -3,7 +3,12 @@ package com.omarmelade.monopoly;
 public class EtatTotalConstruit extends EtatCasePro {
 
 
-    public CasePropriete caseproprio;
+    private final CasePropriete caseproprio;
+
+    public EtatTotalConstruit(CasePropriete caseproprio) {
+        super(caseproprio);
+        this.caseproprio = caseproprio;
+    }
 
     public String arriveJoueur(Joueur j) {
         return "";

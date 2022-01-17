@@ -7,7 +7,9 @@ public class EtatAchete extends EtatCasePro {
     private static final Logger logger = LoggerFactory.getLogger(EtatAchete.class);
 
     private final CasePropriete caseproprio;
+
     public EtatAchete(CasePropriete caseproprio) {
+        super(caseproprio);
         this.caseproprio = caseproprio;
     }
 
@@ -20,9 +22,8 @@ public class EtatAchete extends EtatCasePro {
         }
     }
     @Override
-    public boolean construireMaison(int nb){
+    public void construireMaison(int nb){
        logger.debug("Impossible vous devez posseder le quartier");
-        return false;
     }
     @Override
     public String toString() {

@@ -32,7 +32,7 @@ public class MainIncr1 {
         return joueurs;
     }
 
-    static Monopoly initSecondCase(){
+    public static Monopoly initSecondCase(){
         Monopoly m = new Monopoly(MainIncr1.initThreePlayers());
 
         // Luc possede 2 terrains bleu clairs
@@ -43,6 +43,7 @@ public class MainIncr1 {
         m.avancer(nb);
         m.acheterCase(m.jCourant.getCurCase());
         m.finDeTour();
+
         return m;
     }
 }

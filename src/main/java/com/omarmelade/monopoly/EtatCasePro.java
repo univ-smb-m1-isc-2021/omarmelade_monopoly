@@ -2,12 +2,15 @@ package com.omarmelade.monopoly;
 
 public class EtatCasePro {
 
-    public CasePropriete caseproprio;
+    private final CasePropriete caseproprio;
+
+    public EtatCasePro(CasePropriete caseproprio) {
+        this.caseproprio = caseproprio;
+    }
 
 
-    public boolean construireMaison(int nb){
+    public void construireMaison(int nb){
         System.out.println("Impossible vous devez posseder la proprieté");
-        return false;
     }
 
     public String arriveJoueur(Joueur j) {
@@ -33,5 +36,10 @@ public class EtatCasePro {
 
     public int getPrixLoyer() {
         return caseproprio.getLoyer();
+    }
+
+    @Override
+    public String toString() {
+        return "EtatCasePro";
     }
 }

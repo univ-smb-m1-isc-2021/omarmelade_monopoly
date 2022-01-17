@@ -2,9 +2,10 @@ package com.omarmelade.monopoly;
 
 public class EtatLibre extends EtatCasePro {
 
-    public CasePropriete caseproprio;
+    private final CasePropriete caseproprio;
 
     public EtatLibre(CasePropriete caseproprio) {
+        super(caseproprio);
         this.caseproprio = caseproprio;
     }
 

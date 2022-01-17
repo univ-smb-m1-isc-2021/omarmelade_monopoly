@@ -8,7 +8,9 @@ public class EtatConstructible extends EtatCasePro {
     private static final Logger logger = LoggerFactory.getLogger(EtatConstructible.class);
 
     private final CasePropriete caseproprio;
+
     public EtatConstructible(CasePropriete caseproprio) {
+        super(caseproprio);
         this.caseproprio = caseproprio;
     }
 
@@ -23,14 +25,12 @@ public class EtatConstructible extends EtatCasePro {
 
 
     @Override
-    public boolean construireMaison(int nb) {
+    public void construireMaison(int nb) {
         if(caseproprio.proprio.solde < 100 * nb){
             logger.debug("Impossible de construire par manque d'argent");
-            return false;
         }else{
             logger.debug( nb + "maisons ont été construites sur " + caseproprio.nom);
             caseproprio.proprio.debit(100 * nb);
-            return true;
         }
     }
 

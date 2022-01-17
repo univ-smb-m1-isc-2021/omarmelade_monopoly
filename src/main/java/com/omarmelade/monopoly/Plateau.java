@@ -34,7 +34,6 @@ public class Plateau {
         quartierBc.add(c7);
         quartierBc.add(c8);
 
-
         Quartier bleuclair = new Quartier("bleu clair" , quartierBc);
 
         c8.setQ(bleuclair);
@@ -74,14 +73,5 @@ public class Plateau {
 
     public boolean acheteCase(Case c, int soldeJ, Joueur J) {
         return ((CasePropriete)c).etatCasePro.acheteTerrain(J);
-    }
-
-    public void construireMaison(Case c) {
-    }
-
-    public void checkProprioQuartier(Joueur J, Quartier q) {
-    }
-
-    public void getQuartiersConstructible() {
     }
 }

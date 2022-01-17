@@ -47,12 +47,6 @@ public class CasePropriete extends Case {
     }
 
 
-    public void acheteTerrain(Joueur J) {
-    }
-
-    public void soldeSuffisant(int soldeJ) {
-    }
-
     public void setProprio(Joueur j) {
         proprio = j;
     }
@@ -65,18 +59,15 @@ public class CasePropriete extends Case {
         etatCasePro = etat;
     }
 
-    public String getEtat() {
-        // TODO
-        return new String("");
-    }
-
+    public EtatCasePro getEtat() { return etatCasePro;}
 
     public boolean verifConstructible() {
         boolean constructible = true;
         if(q != null){
             for ( CasePropriete cp : q.casePropriete) {
-                if(!Objects.equals(cp.proprio, proprio)) {
+                if (!Objects.equals(cp.proprio, proprio)) {
                     constructible = false;
+                    break;
                 }
             }
             return constructible;
