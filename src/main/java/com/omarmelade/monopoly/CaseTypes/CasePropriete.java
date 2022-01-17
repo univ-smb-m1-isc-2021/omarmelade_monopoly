@@ -1,4 +1,9 @@
-package com.omarmelade.monopoly;
+package com.omarmelade.monopoly.CaseTypes;
+
+import com.omarmelade.monopoly.CaseStates.EtatCasePro;
+import com.omarmelade.monopoly.CaseStates.EtatLibre;
+import com.omarmelade.monopoly.Joueur;
+import com.omarmelade.monopoly.Quartier;
 
 import java.util.Objects;
 

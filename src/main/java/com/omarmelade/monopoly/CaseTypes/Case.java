@@ -1,4 +1,6 @@
-package com.omarmelade.monopoly;
+package com.omarmelade.monopoly.CaseTypes;
+
+import com.omarmelade.monopoly.Joueur;
 
 public class Case {
 

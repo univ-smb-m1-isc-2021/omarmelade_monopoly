@@ -1,4 +1,5 @@
-package com.omarmelade.monopoly;
+package com.omarmelade.monopoly.CaseStates;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,8 +1,11 @@
 package com.omarmelade.monopoly;
 
+import com.omarmelade.monopoly.CaseTypes.Case;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
+import com.omarmelade.monopoly.CaseTypes.Rue;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 

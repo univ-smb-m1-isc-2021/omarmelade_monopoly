@@ -1,6 +1,5 @@
-package com.omarmelade.monopoly.tests;
+package com.omarmelade.monopoly.MainRun;
 
-import com.omarmelade.monopoly.EtatConstructible;
 import com.omarmelade.monopoly.Joueur;
 import com.omarmelade.monopoly.Monopoly;
 import org.slf4j.Logger;

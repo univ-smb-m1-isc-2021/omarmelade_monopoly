@@ -1,5 +1,8 @@
 package com.omarmelade.monopoly;
 
+import com.omarmelade.monopoly.CaseTypes.Case;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +12,7 @@ public class Joueur {
     public int solde;
 
     public Case curCase;
-    public List<Case> list = new ArrayList<Case>();
+    public List<Case> list = new ArrayList<>();
 
     public Joueur(String name, int solde, Case curCase, List<Case> list) {
         this.name = name;
@@ -32,10 +35,10 @@ public class Joueur {
 
     public void goCase(Case newCase) {
         System.out.println(this.name + " va a la case " + newCase.nom);
-        String posibilites = "";
+        String posibilites;
         setCurCase(newCase);
         if(newCase instanceof CasePropriete)
-            posibilites = ((CasePropriete)newCase).arriveJoueur(this);
+            posibilites = newCase.arriveJoueur(this);
         else
             posibilites = newCase.arriveJoueur(this);
         System.out.println(this.name + " peut : ");
@@ -46,24 +49,12 @@ public class Joueur {
         return solde;
     }
 
-    public void setSoldeJ(int solde) {
-    }
-
-    public void acheteCase() {
-    }
-
-    public void payeLoyer(Case c) {
-    }
-
     public void debit(int c) {
         solde -= c;
     }
 
     public void credit(int c) {
         solde += c;
-    }
-
-    public void construireMaison(int nb) {
     }
 
     @Override

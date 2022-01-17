@@ -47,7 +47,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.omarmelade.monopoly.tests.Main</mainClass>
+                            <mainClass>com.omarmelade.monopoly.MainRun.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -58,7 +58,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>com.omarmelade.monopoly.tests.Main</mainClass>
+                    <mainClass>com.omarmelade.monopoly.MainRun.Main</mainClass>
                 </configuration>
             </plugin>
 

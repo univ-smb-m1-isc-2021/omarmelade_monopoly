@@ -1,6 +1,7 @@
 package com.omarmelade.monopoly;
 
-import com.omarmelade.monopoly.tests.Main;
+import com.omarmelade.monopoly.CaseTypes.Case;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,8 +9,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Monopoly {
 
@@ -17,7 +16,6 @@ public class Monopoly {
 
     public Joueur jCourant;
     public List<Joueur> joueurs;
-    public List<De> de = new ArrayList<>();
     public Plateau plateau;
 
     public Monopoly(List<Joueur> joueurs) {
@@ -28,7 +26,6 @@ public class Monopoly {
 
     public void lancerPartie() {
         Joueur j1 = getRandomOrder(joueurs);
-        //Joueur j1 = joueurs.get(0);
         setJCourant(j1);
         initPlaceJoueurs();
     }

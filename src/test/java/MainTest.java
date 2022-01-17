@@ -1,10 +1,9 @@
-import com.omarmelade.monopoly.CasePropriete;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
 import com.omarmelade.monopoly.Joueur;
 import com.omarmelade.monopoly.Monopoly;
-import com.omarmelade.monopoly.tests.MainIncr1;
+import com.omarmelade.monopoly.MainRun.MainIncr1;
 import org.junit.jupiter.api.Test;
 
-import org.assertj.core.api.Assertions.*;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;

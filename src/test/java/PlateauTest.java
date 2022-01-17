@@ -1,4 +1,6 @@
 import com.omarmelade.monopoly.*;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
+import com.omarmelade.monopoly.CaseTypes.Rue;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

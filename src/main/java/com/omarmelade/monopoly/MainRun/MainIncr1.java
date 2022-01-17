@@ -1,6 +1,6 @@
-package com.omarmelade.monopoly.tests;
+package com.omarmelade.monopoly.MainRun;
 
-import com.omarmelade.monopoly.CasePropriete;
+import com.omarmelade.monopoly.CaseTypes.CasePropriete;
 import com.omarmelade.monopoly.Joueur;
 import com.omarmelade.monopoly.Monopoly;
 
@@ -25,7 +25,7 @@ public class MainIncr1 {
         Joueur j1 = new Joueur("Paul");
         Joueur j2 = new Joueur("Luc");
         Joueur j3 = new Joueur("Théo");
-        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Joueur> joueurs = new ArrayList<>();
         joueurs.add(j1);
         joueurs.add(j2);
         joueurs.add(j3);

@@ -1,4 +1,4 @@
-package com.omarmelade.monopoly;
+package com.omarmelade.monopoly.CaseTypes;
 
 public class Rue extends CasePropriete {
 
