@@ -27,4 +27,3 @@ jobs:
 
       - name: Maven Test
         run: mvn test --file pom.xml
-

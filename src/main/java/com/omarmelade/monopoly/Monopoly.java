@@ -16,16 +16,11 @@ public class Monopoly {
         lancerPartie();
     }
 
-    public boolean lancerPartie() {
-        boolean ok = true;
-        //Joueur j1 = getRandomOrder(joueurs);
-        Joueur j1 = joueurs.get(0);
+    public void lancerPartie() {
+        Joueur j1 = getRandomOrder(joueurs);
+        //Joueur j1 = joueurs.get(0);
         setJCourant(j1);
         initPlaceJoueurs();
-        if(j1 == null || joueurs.isEmpty()){
-            ok = false;
-        }
-        return ok;
     }
 
     private void initPlaceJoueurs() {
