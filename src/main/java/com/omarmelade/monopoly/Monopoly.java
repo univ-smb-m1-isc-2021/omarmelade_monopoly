@@ -3,6 +3,8 @@ package com.omarmelade.monopoly;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Monopoly {
     public Joueur jCourant;
@@ -69,10 +71,11 @@ public class Monopoly {
     }
 
     public int lanceDe(int nb) {
+
         if( nb < 0){
             int min = 2;
             int max = 12;
-            return (int) Math.floor(Math.random()*(max-min+1)+min);
+            return ThreadLocalRandom.current().nextInt(min, max + 1);
         }
         return nb;
     }
