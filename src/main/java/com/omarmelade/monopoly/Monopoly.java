@@ -73,9 +73,10 @@ public class Monopoly {
     public int lanceDe(int nb) {
 
         if( nb < 0){
+            Random rand = new Random();
             int min = 2;
             int max = 12;
-            return ThreadLocalRandom.current().nextInt(min, max + 1);
+            return rand.nextInt(max-min) + min;
         }
         return nb;
     }

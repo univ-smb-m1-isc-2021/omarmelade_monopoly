@@ -1,8 +1,8 @@
 import com.omarmelade.monopoly.Joueur;
 import com.omarmelade.monopoly.Monopoly;
-import com.omarmelade.monopoly.tests.Main;
 import org.junit.jupiter.api.Test;
 
+import org.assertj.core.api.Assertions.*;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,7 +23,7 @@ public class MainTest {
         Joueur j1 = new Joueur("Paul");
         Joueur j2 = new Joueur("Luc");
         Joueur j3 = new Joueur("Théo");
-        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Joueur> joueurs = new ArrayList<>();
         joueurs.add(j1);
         joueurs.add(j2);
         joueurs.add(j3);
@@ -42,13 +42,13 @@ public class MainTest {
         Joueur j1 = new Joueur("Paul");
         Joueur j2 = new Joueur("Luc");
         Joueur j3 = new Joueur("Théo");
-        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Joueur> joueurs = new ArrayList<>();
         joueurs.add(j1);
         joueurs.add(j2);
         joueurs.add(j3);
         Monopoly m = new Monopoly(joueurs);
 
-        ArrayList<Integer> tab = new ArrayList<Integer>();
+        ArrayList<Integer> tab = new ArrayList<>();
         for (int i = 0; i < 200000; i++) {
            tab.add(m.lanceDe(-1));
            assertTrue(tab.get(i) <= 12 && tab.get(i) >= 2);
