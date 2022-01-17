@@ -1,7 +1,9 @@
 package com.omarmelade.monopoly;
 
 public class EtatCasePro {
+
     public CasePropriete caseproprio;
+
 
     public boolean construireMaison(int nb){
         System.out.println("Impossible vous devez posseder la proprieté");

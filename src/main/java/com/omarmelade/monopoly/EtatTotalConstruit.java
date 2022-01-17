@@ -4,6 +4,7 @@ public class EtatTotalConstruit extends EtatCasePro {
 
 
     public CasePropriete caseproprio;
+
     public String arriveJoueur(Joueur j) {
         return "";
     }

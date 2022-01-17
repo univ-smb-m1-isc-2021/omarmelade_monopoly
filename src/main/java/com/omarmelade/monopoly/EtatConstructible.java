@@ -1,14 +1,18 @@
 package com.omarmelade.monopoly;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class EtatConstructible extends EtatCasePro {
 
+    private static final Logger logger = LoggerFactory.getLogger(EtatConstructible.class);
 
-    public CasePropriete caseproprio;
-
+    private final CasePropriete caseproprio;
     public EtatConstructible(CasePropriete caseproprio) {
         this.caseproprio = caseproprio;
     }
 
+    @Override
     public String arriveJoueur(Joueur j) {
         if(j != caseproprio.proprio){
             return "Payer le loyer";
@@ -22,6 +26,7 @@ public class EtatConstructible extends EtatCasePro {
         return caseproprio.getLoyer();
     }
 
+    @Override
     public boolean payerLoyer(Joueur j) {
         if(j != caseproprio.proprio){
             j.debit(calculeLoyer());
@@ -35,12 +40,13 @@ public class EtatConstructible extends EtatCasePro {
         return caseproprio.getNbCaseQuartier() * getPrixLoyer();
     }
 
+    @Override
     public boolean construireMaison(int nb) {
         if(caseproprio.proprio.solde < 100 * nb){
-            System.out.println("Impossible de construire par manque d'argent");
+            logger.debug("Impossible de construire par manque d'argent");
             return false;
         }else{
-            System.out.println( nb + "maisons ont été construites sur " + caseproprio.nom);
+            logger.debug( nb + "maisons ont été construites sur " + caseproprio.nom);
             caseproprio.proprio.debit(100 * nb);
             return true;
         }
