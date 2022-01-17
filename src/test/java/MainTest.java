@@ -50,13 +50,9 @@ public class MainTest {
 
         int nb = m.lanceDe(4);
         m.avancer(nb);
-
-        System.err.println("!hellllo " + ((CasePropriete)m.jCourant.getCurCase()).getEtat());
-
         m.payeLoyer(m.jCourant.getCurCase());
         System.out.println("\n");
         m.finDeTour();
-
     }
 
     @Test

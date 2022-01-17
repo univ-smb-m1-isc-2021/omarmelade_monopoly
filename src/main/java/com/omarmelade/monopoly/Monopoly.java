@@ -1,5 +1,9 @@
 package com.omarmelade.monopoly;
 
+import com.omarmelade.monopoly.tests.Main;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,6 +12,9 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Monopoly {
+
+    private static final Logger logger = LoggerFactory.getLogger(Monopoly.class);
+
     public Joueur jCourant;
     public List<Joueur> joueurs;
     public List<De> de = new ArrayList<>();
@@ -38,10 +45,10 @@ public class Monopoly {
 
     public void finDeTour() {
         jCourant.info();
-        System.out.println("Fin de tour pour " + jCourant.name + "\n\n");
+        logger.debug("Fin de tour pour " + jCourant.name + "\n\n");
 
         setJCourant(getJoueurSuivant(jCourant));
-        System.out.println("C'est a " + jCourant.name + " de jouer");
+        logger.debug("C'est a " + jCourant.name + " de jouer");
     }
 
     public Joueur getJoueurSuivant(Joueur jCourant) {
@@ -60,9 +67,6 @@ public class Monopoly {
     public Joueur getRandomOrder(List<Joueur> liste) {
         Collections.shuffle(liste);
         return liste.get(0);
-    }
-
-    public void jouerTour(Case c) {
     }
 
     public void avancer(int nbCase) {
@@ -86,8 +90,8 @@ public class Monopoly {
         boolean achete;
         if (c instanceof CasePropriete) {
             achete = plateau.acheteCase(c, jCourant.solde, jCourant);
-            if(achete) System.out.println("Terrain " + c.nom + " acheté par " + jCourant);
-            if(!achete) System.out.println("Votre solde est trop bas");
+            if(achete) logger.debug("Terrain " + c.nom + " acheté par " + jCourant);
+            if(!achete) logger.debug("Votre solde est trop bas");
         }else {
             achete = false;
         }
@@ -99,13 +103,13 @@ public class Monopoly {
     }
 
     public void payeLoyer(Case c) {
-        System.out.println("Paul va payer le loyer");
+        logger.debug("Paul va payer le loyer");
         boolean paye = ((CasePropriete)c).payeLoyer(jCourant);
         if(paye){
             jCourant.info();
             ((CasePropriete) c).proprio.info();
         }else {
-            System.out.println("Paul n'as pas pu payer le loyer");
+            logger.debug("Paul n'as pas pu payer le loyer");
         }
     }
 
