@@ -23,7 +23,7 @@ public class Main {
         int nbJint = Integer.parseInt(nbJ);
 
         for (int i = 0; i < nbJint; i++) {
-            logger.debug("Entrez le nom de j" + (i + 1));
+            logger.debug(String.format("Entrez le nom de j %s", (i + 1)));
             String name = s.nextLine();
             joueurs.add(new Joueur(name));
         }
@@ -31,7 +31,7 @@ public class Main {
         logger.debug("La partie est en cours de chargement");
         Monopoly m = new Monopoly(joueurs);
         m.lancerPartie();
-        logger.debug("Voici la liste des joueurs : " + m.joueurs);
-        logger.debug(m.jCourant + " va commencer.");
+        logger.debug(String.format("Voici la liste des joueurs : %s", m.joueurs));
+        logger.debug(String.format("%s va commencer.", m.jCourant));
     }
 }

@@ -30,6 +30,7 @@ public class CasePropriete extends Case {
         this.etatCasePro = new EtatLibre(this);
     }
 
+    @Override
     public String arriveJoueur(Joueur j) {
         return etatCasePro.arriveJoueur(j);
     }
@@ -76,12 +77,11 @@ public class CasePropriete extends Case {
     }
 
     public int getNbCaseQuartier(){
-        int nb = 1;
+        int nb = 0;
         if(q != null){
             for ( CasePropriete cp : q.casePropriete) {
-                if(!Objects.equals(cp.proprio, proprio)) {
+                if(cp.q == q)
                     nb++;
-                }
             }
         }
         return nb;
