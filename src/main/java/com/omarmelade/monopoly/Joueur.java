@@ -37,10 +37,7 @@ public class Joueur {
         System.out.println(this.name + " va a la case " + newCase.nom);
         String posibilites;
         setCurCase(newCase);
-        if(newCase instanceof CasePropriete)
-            posibilites = newCase.arriveJoueur(this);
-        else
-            posibilites = newCase.arriveJoueur(this);
+        posibilites = newCase.arriveJoueur(this);
         System.out.println(this.name + " peut : ");
         System.out.println(" - " + posibilites);
     }
